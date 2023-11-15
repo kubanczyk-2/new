@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYyYvWh5PVNg2flTTvlAtXLSudJuuqa1c"></script>
+</head>
+    <link rel="stylesheet" href="./sass/contact.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="nav-container">
+            <a href="index.html" class="logo"></a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="aboutus.html" class="link three">O nas</a></li>
+                    <li><a href="purchase.html" class="link three">Zakup</a></li>
+                    <li><a href="sale.html" class="link three">Sprzedaż</a></li>
+                    <li><a href="hire.html" class="link three">Najem</a></li>
+                    <li><a href="rent.html" class="link three">Wynajem</a></li>
+                    <li><a href="contact.html" class="link three">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <header class="header">
+        <div class="background">
+            <div class="text1">Jesteśmy Tutaj, aby Ci Pomóc</div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="first">
+            <div class="new-container">
+
+                <div class="text">
+                    <div class="question">Masz pytania, potrzebujesz dodatkowych informacji lub chcesz rozpocząć
+                        współpracę z nami?<br> Skontaktuj się z <p>Pax Real Estate</p>, a nasi eksperci odpowiedzą na
+                        Twoje pytania i zapewnią Ci niezbędne wsparcie.
+                    </div>
+                    <br>
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="second">
+            <div class="new-container">
+                <div class="title">
+                    Dane Kontaktowe:
+                </div>
+                <div class="contact">
+                    <div class="adress"><b>Adres Biura:</b> ul. Leszczyńska 3/6, 00-339 Warszawa</div>
+                    <div class="phone"><img src="./img/icons/phone.svg" alt="" srcset=""> <b>Telefon:</b> +48 799 040
+                        460
+                    </div>
+                    <div class="email"><img src="./img/icons/mail.svg" alt="" srcset=""> <b>E-mail:</b> kontakt@paxre.pl
+                    </div>
+                </div>
+                <div class="open">Godziny Pracy:</div>
+                <div class="time">
+                    <div class="mon"><b>Poniedziałek - Piątek:</b> 9:00 - 18:00</div>
+                    <div class="sat"><b>Sobota:</b> 10:00 - 14:00</div>
+                    <div class="sun"><b>Niedziela:</b> Zamknięte</div>
+                </div>
+
+            </div>
+        </section>
+        <section class="contact-form">
+            <h2>Formularz Kontaktowy</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="group">
+                            <label for="name">Imię:</label>
+                            <input type="text" id="imie" name="imie" required>
+                        </div>
+                        <div class="group">
+                            <label for="surname">Nazwisko:</label>
+                            <input type="text" id="nazwisko" name="nazwisko" required>
+                        </div>
+
+                    </div>
+                    <div class="input-group">
+                        <div class="group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="group">
+                            <label for="telefon">Telefon:</label>
+                            <input type="tel" id="phonenumber" name="phonenumber" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="group">
+                            <label for="name">Dodatkowe informacje:</label>
+                            <textarea id="msg" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Wyślij</button>
+                </div>
+            </form>
+
+        </section>
+
+        <section class="third">
+            <div class="new-container">
+                <div class="title">
+                    Media Społecznościowe:
+                </div>
+                <div class="title2">
+                    Odwiedź nas na naszych profilach społecznościowych:
+                </div>
+                <div class="contact">
+                    <div class="fb"><img src="./img/icons/facebook.svg" alt="" srcset=""> <a
+                            href="https://www.facebook.com/profile.php?id=100063743124452">Facebook</a></div>
+                    <div class="ig"><img src="./img/icons/instagram1.svg" alt="" srcset=""> <a
+                            href="https://www.instagram.com/pax_real_estate">Instagram</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class=" four second">
+            <div class="new-container">
+                <div class="title">
+                    Lokalizacja Biura:
+                </div>
+                
+                
+
+            </div>
+        </section>
+ 
+
+        <div id="map" style="height: 600px; width: 100%;"></div>
+
+
+
+
+
+
+        <footer class="footer">
+
+            <p class="footer__bottom-text"> &copy; <span class="footer__year"></span> Pax Real Estate by Jakub Alot
+            </p>
+
+        </footer>
+    </main>
+
+    
+    <script src="./js/contact.js"></script>
+</body>
+
+</html>

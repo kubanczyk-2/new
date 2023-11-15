@@ -1,0 +1,411 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* background-color: rgb(245, 245, 239); */
+  background-image: url("../img/BG.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #cecece;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+/* NAWIGACJA */
+.container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Początkowy efekt cienia */
+  transition: background-color 0.3s; /* Dla płynnego przejścia */
+}
+
+.container.scrolled {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-container {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  width: 80px;
+  height: 80px;
+  background-image: url("../img/noname.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 16px;
+}
+
+.nav li {
+  margin-left: 30px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(245, 245, 239);
+}
+
+.link {
+  position: relative;
+  padding: 10px 5px;
+  color: rgb(0, 140, 255);
+  text-decoration: none;
+}
+
+.link,
+.link::after,
+.link::before {
+  transition: 0.3s;
+}
+
+.three::before,
+.three::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  border-bottom: 2px solid #fff;
+}
+
+.three::before {
+  right: 50%;
+}
+
+.three::after {
+  left: 50%;
+}
+
+.three:hover::before,
+.three:hover::after {
+  width: 50%;
+}
+
+/* HEADER */
+.slick .photo {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Dodaj przejście */
+}
+.slick .photo img {
+  height: auto;
+  width: 100%;
+  max-height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover; /* Dzięki temu obraz zostanie zachowany i wypełni całą przestrzeń */
+}
+.slick .photo .photo1,
+.slick .photo .photo2,
+.slick .photo .photo3,
+.slick .photo .photo4 {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  max-height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.slick .photo .photo1 .photo-overlay,
+.slick .photo .photo2 .photo-overlay,
+.slick .photo .photo3 .photo-overlay,
+.slick .photo .photo4 .photo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Przezroczyste tło dla napisu */
+}
+.slick .photo .photo1 .photo-overlay .photo-text,
+.slick .photo .photo2 .photo-overlay .photo-text,
+.slick .photo .photo3 .photo-overlay .photo-text,
+.slick .photo .photo4 .photo-overlay .photo-text {
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.5); /* Przezroczyste tło dla napisu */
+  z-index: 0;
+}
+.slick .photo .photo1 .photo-overlay .check,
+.slick .photo .photo2 .photo-overlay .check,
+.slick .photo .photo3 .photo-overlay .check,
+.slick .photo .photo4 .photo-overlay .check {
+  background-color: #fff;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 20px;
+  z-index: 10;
+}
+.slick .photo .photo1 .photo-overlay .check a,
+.slick .photo .photo2 .photo-overlay .check a,
+.slick .photo .photo3 .photo-overlay .check a,
+.slick .photo .photo4 .photo-overlay .check a {
+  text-decoration: none;
+}
+.slick .photo .photo2,
+.slick .photo .photo3,
+.slick .photo .photo4 {
+  opacity: 0; /* Zaczynamy od drugiego zdjęcia niewidocznego */
+}
+.slick .click-container .click1,
+.slick .click-container .click2 {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px; /* Szerokość przycisków */
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  /* Przycisk SVG dla kliknięć */
+}
+.slick .click-container .click1 svg,
+.slick .click-container .click2 svg {
+  /* Dostosuj styl SVG, na przykład rozmiar */
+  width: 50px;
+  height: 50px;
+}
+.slick .click-container .click1 {
+  left: 1%;
+}
+.slick .click-container .click2 {
+  right: 1%;
+}
+
+/* Sekcja pierwsza */
+.first {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.first-container2 {
+  max-width: 1600px;
+}
+
+.first-container {
+  max-width: 1200px;
+}
+
+.table {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.title strong {
+  font-weight: bold;
+  background: linear-gradient(to right, #d79978, #a45e42);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.together {
+  padding: 5px;
+}
+
+.table img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  padding: 50px 100px;
+  font-size: 23px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Sekcja druga */
+.second-img {
+  position: relative;
+  padding: 90px 32px;
+}
+
+.second-img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.second .first-container {
+  color: rgb(245, 245, 239);
+  z-index: 2;
+}
+
+.second .title {
+  color: rgb(245, 245, 239);
+}
+
+.second .text {
+  margin: 0 auto;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.9;
+}
+.second .text b {
+  background: linear-gradient(to right, #d79978, #a45e42);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+/* Sekcja trzecia */
+.third {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.third .new-container {
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.third .new-container .first1 {
+  margin-top: 60px;
+}
+.third .new-container .first1 .first-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.third .new-container .first1 .first-container .left {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+.third .new-container .first1 .first-container .left strong {
+  background: linear-gradient(to right, #d79978, #a45e42);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+.third .new-container .first1 .first-container .left2 {
+  text-align: center;
+  font-size: 20px;
+}
+.third .new-container .first1 .first-container .list {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.third .new-container .first1 .first-container .list ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Przejście do układu w dół przy zmniejszaniu ekranu */
+  justify-content: center; /* Wyśrodkowanie w poziomie */
+}
+.third .new-container .first1 .first-container .list ul li {
+  width: 400px;
+  text-align: center;
+  margin: 30px;
+  padding: 20px;
+  background: linear-gradient(to right, #9e7157, #854d35);
+  border-radius: 10px;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.third .new-container .first1 .first-container .list ul li div {
+  padding: 0 20px;
+}
+.third .new-container .first1 .first-container .list ul li .one {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 100px 0;
+}
+.third .new-container .first1 .first-container .list ul li .two {
+  position: relative;
+  font-size: 20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.2;
+}
+.third .new-container .first1 .first-container .list ul li:hover {
+  transform: rotateY(-180deg);
+  transition: 1s;
+}
+.third .new-container .first1 .first-container .list ul li:hover .one {
+  display: none;
+}
+.third .new-container .first1 .first-container .list ul li:hover .two {
+  transform: rotateY(-180deg);
+  display: flex;
+}
+
+.footer {
+  color: #fff;
+  background-color: #2e2e2e;
+}
+
+.footer__bottom-text {
+  padding: 2em;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
